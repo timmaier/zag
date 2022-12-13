@@ -379,6 +379,9 @@ export function machine(userContext: UserDefinedContext) {
         },
         // sync input value, in event it was set from form libraries via `ref`, `bind:this`, etc.
         syncInputValue(ctx) {
+          // just return to show issue todo remove
+          return
+
           const input = dom.getInputEl(ctx)
           if (!input || input.value == ctx.value) return
           const value = utils.parse(ctx, input.value)
