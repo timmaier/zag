@@ -7,7 +7,9 @@ import { useControls } from "../hooks/use-controls"
 import { Toolbar } from "../components/toolbar"
 
 const controls = useControls(numberInputControls)
-const [state, send] = useMachine(numberInput.machine({ id: "1", value: "5" }))
+const [state, send] = useMachine(numberInput.machine({ id: "1", value: "5" }), {
+    context: controls.context,
+})
 const api = numberInput.connect(state.value, send, normalizeProps)
 </script>
 
