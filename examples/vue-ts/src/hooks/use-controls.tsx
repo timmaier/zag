@@ -42,7 +42,7 @@ export function useControls<T extends ControlRecord>(config: T) {
                       id={label}
                       type="checkbox"
                       checked={state.value[key] as boolean}
-                      onInput={(e) => {
+                      onChange={(e) => {
                         //@ts-expect-error
                         state.value[key] = e.currentTarget.checked
                       }}
@@ -59,11 +59,9 @@ export function useControls<T extends ControlRecord>(config: T) {
                       type="text"
                       placeholder={placeholder}
                       value={state.value[key] as string}
-                      onKeydown={(event) => {
-                        if (event.key === "Enter") {
-                          //@ts-expect-error
-                          state.value[key] = (event.target as HTMLInputElement).value
-                        }
+                      onChange={(event) => {
+                        //@ts-expect-error
+                        state.value[key] = (event.target as HTMLInputElement).value
                       }}
                     />
                   </div>
@@ -105,11 +103,9 @@ export function useControls<T extends ControlRecord>(config: T) {
                       min={min}
                       max={max}
                       value={state.value[key] as number}
-                      onKeydown={(e) => {
-                        if (e.key === "Enter") {
-                          //@ts-expect-error
-                          state.value[key] = (e.target as HTMLInputElement).valueAsNumber
-                        }
+                      onChange={(e) => {
+                        //@ts-expect-error
+                        state.value[key] = (e.target as HTMLInputElement).valueAsNumber
                       }}
                     />
                   </div>
