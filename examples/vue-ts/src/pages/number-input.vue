@@ -1,16 +1,17 @@
 <script setup lang="ts">
-import * as numberInput from "@zag-js/number-input"
-import { normalizeProps, useMachine } from "@zag-js/vue"
+import { zagNumberInput } from "@zag-js/number-input"
 import { numberInputControls } from "@zag-js/shared"
 import { StateVisualizer } from "../components/state-visualizer"
 import { useControls } from "../hooks/use-controls"
 import { Toolbar } from "../components/toolbar"
+import { computed } from "vue"
 
 const controls = useControls(numberInputControls)
-const [state, send] = useMachine(numberInput.machine({ id: "1", value: "5" }), {
+
+const api = zagNumberInput({ id: "1", value: "5" }, {
     context: controls.context,
-})
-const api = numberInput.connect(state.value, send, normalizeProps)
+});
+
 </script>
 
 <template>
@@ -25,5 +26,5 @@ const api = numberInput.connect(state.value, send, normalizeProps)
       </div>
     </div>
   </main>
-  <Toolbar :controls="controls.ui" :visualizer="StateVisualizer({state})"/>
+  <Toolbar :controls="controls.ui" :visualizer="StateVisualizer({state: api.state})"/>
 </template>

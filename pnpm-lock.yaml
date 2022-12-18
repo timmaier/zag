@@ -665,10 +665,12 @@ importers:
       '@zag-js/number-utils': workspace:*
       '@zag-js/types': workspace:*
       '@zag-js/utils': workspace:*
+      vue: 3.2.45
     dependencies:
       '@zag-js/anatomy': link:../../anatomy
       '@zag-js/core': link:../../core
       '@zag-js/types': link:../../types
+      vue: 3.2.45
     devDependencies:
       '@zag-js/dom-utils': link:../../utilities/dom
       '@zag-js/form-utils': link:../../utilities/form-utils

@@ -31,7 +31,8 @@
   "dependencies": {
     "@zag-js/anatomy": "workspace:*",
     "@zag-js/core": "workspace:*",
-    "@zag-js/types": "workspace:*"
+    "@zag-js/types": "workspace:*",
+    "vue": "3.2.45"
   },
   "devDependencies": {
     "@zag-js/dom-utils": "workspace:*",

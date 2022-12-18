@@ -26,6 +26,7 @@ export function connect<T extends PropTypes>(state: State, send: Send, normalize
   const translations = state.context.translations
 
   return {
+    state: state,
     isFocused,
     isInvalid,
     isValueEmpty,
